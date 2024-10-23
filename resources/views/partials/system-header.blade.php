@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\URL; @endphp
 <header>
     <!-- Header top area start -->
     <div class="header-top">
@@ -12,7 +13,8 @@
                     <div class="top-nav">
                         <ul>
                             <li><a href="tel:0123456789"><i class="fa fa-phone"></i> +012 3456 789</a></li>
-                            <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i> demo@example.com</a></li>
+                            <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i> demo@example.com</a>
+                            </li>
                             <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                         </ul>
                     </div>
@@ -27,15 +29,15 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-3 col">
                     <div class="header-logo">
-                        <a href="#">
-                            <img src="assets/images/logo/logo.png" alt="Site Logo" />
+                        <a href="{{ route('home') }}">
+                            <img src="{{ URL::to('images/logo/logo.png') }}" alt="Site Logo"/>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6 d-none d-lg-block">
                     <div class="search-element">
                         <form action="#">
-                            <input type="text" placeholder="Search" />
+                            <input type="text" placeholder="Search"/>
                             <button><i class="pe-7s-search"></i></button>
                         </form>
                     </div>
@@ -47,12 +49,14 @@
                             <i class="pe-7s-like"></i>
                         </a>
                         <!-- Single Wedge End -->
-                        <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                        <a href="#offcanvas-cart"
+                           class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                             <i class="pe-7s-shopbag"></i>
                             <span class="header-action-num">01</span>
                             <!-- <span class="cart-amount">€30.00</span> -->
                         </a>
-                        <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                        <a href="#offcanvas-mobile-menu"
+                           class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
                             <i class="pe-7s-menu"></i>
                         </a>
                     </div>
@@ -67,13 +71,15 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-3 col">
                     <div class="header-logo">
-                        <a href="#"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+                        <a href="{{ route('home') }}">
+                            <img src="{{ URL::to('images/logo/logo.png') }}" alt="Site Logo"/>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-6 d-none d-lg-block">
                     <div class="search-element">
                         <form action="#">
-                            <input type="text" placeholder="Search" />
+                            <input type="text" placeholder="Search"/>
                             <button><i class="pe-7s-search"></i></button>
                         </form>
                     </div>
@@ -85,12 +91,14 @@
                             <i class="pe-7s-like"></i>
                         </a>
                         <!-- Single Wedge End -->
-                        <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                        <a href="#offcanvas-cart"
+                           class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                             <i class="pe-7s-shopbag"></i>
                             <span class="header-action-num">01</span>
                             <!-- <span class="cart-amount">€30.00</span> -->
                         </a>
-                        <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                        <a href="#offcanvas-mobile-menu"
+                           class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
                             <i class="pe-7s-menu"></i>
                         </a>
                     </div>
@@ -174,7 +182,7 @@
                                         <li class="title"><a href="#">Single Product Page</a></li>
                                         <li><a href="#">Product Slider</a></li>
                                         <li><a href="#">Product Gallery Left</a>
-                                        <li><a href="#">Product Gallery Right</a> </li>
+                                        <li><a href="#">Product Gallery Right</a></li>
                                         <li><a href="#">Product Sticky Left</a>
                                         </li>
                                         <li><a href="#">Product Sticky Right</a>
@@ -203,7 +211,9 @@
                                         <li><a href="#">Blog Grid Right Sidebar</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown position-static"><a href="blog-list-left-sidebar.html">Blog List
+                                <li class="dropdown position-static">
+                                    <a href="#">
+                                        Blog List
                                         <i class="fa fa-angle-right"></i></a>
                                     <ul class="sub-menu sub-menu-2">
                                         <li><a href="#">Blog List</a></li>
@@ -235,7 +245,7 @@
             <!-- mobile search start -->
             <div class="search-element max-width-100">
                 <form action="#">
-                    <input type="text" placeholder="Search" />
+                    <input type="text" placeholder="Search"/>
                     <button><i class="pe-7s-search"></i></button>
                 </form>
             </div>

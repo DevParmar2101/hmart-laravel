@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\URL; @endphp
 <div class="footer-area">
     <div class="footer-container">
         <div class="footer-top">
@@ -7,11 +8,12 @@
                     <div class="col-md-6 col-lg-3 mb-md-30px mb-lm-30px">
                         <div class="single-wedge">
                             <div class="footer-logo">
-                                <a href="#">
-                                    <img src="assets/images/logo/footer-logo.png" alt="">
+                                <a href="{{ route('home') }}">
+                                    <img src="{{ URL::to('images/logo/footer-logo.png') }}" alt="">
                                 </a>
                             </div>
-                            <p class="about-text">Lorem ipsum dolor sit amet consl adipisi elit, sed do eiusmod templ incididunt ut labore
+                            <p class="about-text">Lorem ipsum dolor sit amet consl adipisi elit, sed do eiusmod templ
+                                incididunt ut labore
                             </p>
                             <ul class="link-follow">
                                 <li>
@@ -97,13 +99,15 @@
                 <div class="line-shape-top line-height-1">
                     <div class="row flex-md-row-reverse align-items-center">
                         <div class="col-md-6 text-center text-md-end">
-                            <div class="payment-mth"><a href="#"><img class="img img-fluid" src="assets/images/icons/payment.png" alt="payment-image"></a></div>
+                            <div class="payment-mth"><a href="#"><img class="img img-fluid"
+                                                                      src="{{ URL::to('images/icons/payment.png') }}"
+                                                                      alt="payment-image"></a></div>
                         </div>
                         <div class="col-md-6 text-center text-md-start">
                             <p class="copy-text"> © 2021 <strong>Hmart</strong> Made With
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 By <a class="company-name" href="#">
-                                    <strong> Dev Parmar </strong></a>.
+                                    <strong> Dev Parmar</strong></a>.
                             </p>
                         </div>
                     </div>
