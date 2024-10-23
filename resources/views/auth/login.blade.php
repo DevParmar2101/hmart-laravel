@@ -1,6 +1,7 @@
-
+@php
+    use Illuminate\Support\Facades\Route;
+@endphp
 @extends('layouts.guest')
-
 @section('content')
     <div class="login-register-area pt-100px pb-100px">
         <div class="container">
@@ -8,10 +9,10 @@
                 <div class="col-lg-7 col-md-12 ml-auto mr-auto">
                     <div class="login-register-wrapper">
                         <div class="login-register-tab-list nav">
-                            <a class="active" data-bs-toggle="tab" href="#lg1">
+                            <a class="{{ Route::is('login') ? 'active' :'' }}" href="{{ route('login') }}">
                                 <h4>login</h4>
                             </a>
-                            <a data-bs-toggle="tab" href="#lg2">
+                            <a class="{{ Route::is('register') ? 'active' : '' }}" href="{{ route('register') }}">
                                 <h4>register</h4>
                             </a>
                         </div>
@@ -21,19 +22,21 @@
                                     <div class="login-register-form">
                                         <form method="POST" action="{{ route('login') }}">
                                             @csrf
-                                            <input id="email" class="block mt-1 w-full" type="email" name="email" value="{{ old('email') }}" required autocomplete="username" placeholder="Email" />
+
+                                            <input id="email" class="block mt-1 w-full" type="email" name="email" value="{{ old('email') }}" required autocomplete="username" placeholder="Email"/>
                                             @if ($errors->has('email'))
                                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                                             @endif
 
-                                            <input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" placeholder="Password" />
+                                            <input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" placeholder="Password"/>
                                             @if ($errors->has('password'))
                                                 <span class="text-danger">{{ $errors->first('password') }}</span>
                                             @endif
 
                                             <div class="button-box">
+
                                                 <div class="login-toggle-btn">
-                                                    <input id="remember_me" name="remember" type="checkbox" />
+                                                    <input id="remember_me" name="remember" type="checkbox"/>
                                                     <a class="flote-none" href="javascript:void(0)">Remember me</a>
                                                     <a href="#">Forgot Password?</a>
                                                 </div>
@@ -43,20 +46,6 @@
                                                 </button>
                                             </div>
 
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="lg2" class="tab-pane">
-                                <div class="login-form-container">
-                                    <div class="login-register-form">
-                                        <form action="#" method="post">
-                                            <input type="text" name="user-name" placeholder="Username" />
-                                            <input type="password" name="user-password" placeholder="Password" />
-                                            <input name="user-email" placeholder="Email" type="email" />
-                                            <div class="button-box">
-                                                <button type="submit"><span>Register</span></button>
-                                            </div>
                                         </form>
                                     </div>
                                 </div>
